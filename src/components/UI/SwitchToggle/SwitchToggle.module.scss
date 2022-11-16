@@ -1,0 +1,24 @@
+.switch {
+  width: 52px;
+  height: 32px;
+  background-color: var(--color-secondary);
+  display: flex;
+  justify-content: flex-start;
+  border-radius: 50px;
+  padding: 5px;
+  cursor: pointer;
+}
+
+.on {
+  background-color: var(--text-color-primary);
+  justify-content: flex-end;
+  transition: 0.2s ease-in-out;
+}
+
+.handle {
+  height: 100%;
+  aspect-ratio: 1 / 1;
+  background-color: white;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  border-radius: 40px;
+}

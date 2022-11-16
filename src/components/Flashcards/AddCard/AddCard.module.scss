@@ -1,0 +1,49 @@
+.add {
+  width: 100%;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 1px dashed var(--color-border);
+  border-radius: var(--radius-default);
+  cursor: pointer;
+  transition: 0.2s;
+
+  grid-column-start: span 3;
+
+  &:hover {
+    & .square {
+      background: var(--color-secondary-hover);
+    }
+
+    & .text {
+      color: var(--text-color-primary);
+    }
+  }
+}
+
+.square {
+  width: 60px;
+  height: 60px;
+  border-radius: 16px;
+  background: var(--color-secondary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.2s;
+}
+
+.icon {
+  stroke: var(--text-color-secondary);
+  stroke-width: 1px;
+  width: 24px;
+  height: 24px;
+}
+
+.text {
+  font-size: 0.875rem;
+  user-select: none;
+  margin-top: 1rem;
+  transition: 0.2s;
+}

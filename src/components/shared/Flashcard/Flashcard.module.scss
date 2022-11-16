@@ -1,0 +1,134 @@
+.card {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  cursor: grab;
+  border-radius: 45px;
+  height: 100%;
+  width: 100%;
+
+  &:first-child {
+    & .background {
+      background: #fff;
+    }
+  }
+}
+
+.background {
+  position: absolute;
+  width: calc(100% + 1px);
+  height: calc(100% + 1px);
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+  border-radius: 45px;
+}
+
+.wrapper {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  transform-style: preserve-3d;
+  transition: 0.4s;
+  background: inherit;
+  border-radius: var(--radius-default);
+}
+
+.clicked {
+  transform: rotateY(-180deg) !important;
+}
+
+.back,
+.front {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: inherit;
+  backface-visibility: hidden;
+}
+
+.back {
+  transform: rotateY(180deg);
+
+  & .name {
+    color: var(--color-primary);
+  }
+
+  & .audio svg {
+    stroke: var(--text-color-primary);
+
+    &:hover {
+      stroke: var(--text-color-secondary);
+    }
+  }
+
+  & .chart svg {
+    stroke: var(--text-color-primary);
+  }
+}
+
+.front {
+  & .chart svg {
+    stroke: #fff;
+  }
+
+  & .audio svg {
+    &:hover {
+      stroke: rgba(255, 255, 255, 0.8);
+    }
+  }
+}
+
+.audio {
+  width: 46px;
+  height: 46px;
+
+  & svg {
+    stroke-width: 3px;
+  }
+}
+
+.name {
+  font-family: var(--text-family-medium);
+  font-size: 2.625rem;
+  word-wrap: break-word;
+  text-overflow: ellipsis;
+  max-width: 100%;
+  color: #fff;
+  text-transform: lowercase;
+  text-align: center;
+  user-select: none;
+  overflow: auto;
+  cursor: default;
+  pointer-events: none;
+}
+
+.info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.language {
+  font-family: var(--text-family-regular);
+  font-size: 1.3125rem;
+  color: var(--color-gray);
+  z-index: 3;
+}
+
+.chart {
+  & svg {
+    stroke-width: 20px;
+  }
+}
+
+@media screen and (max-width: 1170px) {
+  .name {
+    font-size: 2.2rem;
+  }
+}

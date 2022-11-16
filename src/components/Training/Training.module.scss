@@ -1,0 +1,45 @@
+html,
+body,
+#root {
+  height: 100%;
+}
+
+.container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 640px;
+  height: 100vh;
+  position: relative;
+  padding: 0rem 15px;
+  overflow: hidden;
+}
+
+.cards {
+  position: relative;
+  min-width: 345px;
+  max-width: 380px;
+  aspect-ratio: 1/1;
+  width: 30%;
+}
+
+@supports (-webkit-touch-callout: none) {
+  .container {
+    height: -webkit-fill-available;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .cards {
+    max-width: 576px;
+    width: 55%;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .cards {
+    width: 100%;
+    min-width: 310px;
+  }
+}

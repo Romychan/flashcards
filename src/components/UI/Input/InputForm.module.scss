@@ -1,0 +1,28 @@
+.form {
+  position: relative;
+}
+
+.label {
+  font-size: 0.875rem !important;
+  margin-bottom: 5px;
+  display: block;
+  text-align: left;
+}
+
+.input {
+  width: 100%;
+}
+
+.textarea {
+  width: 100%;
+  min-height: 55px;
+}
+
+.error {
+  position: absolute;
+  left: 0;
+  bottom: -12px;
+  font-family: var(--text-family-regular);
+  font-size: 0.75rem;
+  color: var(--color-red);
+}

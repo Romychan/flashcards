@@ -1,0 +1,32 @@
+.section {
+}
+
+.sticky {
+  & .container {
+    padding-top: 6.5rem;
+  }
+
+  & .header {
+    position: sticky;
+    top: 0px;
+    padding: 1rem 0px;
+    background: #fff;
+    z-index: 2;
+    margin-bottom: 3rem;
+  }
+}
+
+.container {
+  padding-top: 7.5rem;
+  padding-bottom: 2rem;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 4rem;
+}
+
+.title {
+}

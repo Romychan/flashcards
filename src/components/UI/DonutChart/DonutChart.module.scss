@@ -1,0 +1,21 @@
+.chart {
+  display: flex;
+}
+
+.completed {
+  display: flex;
+
+  & svg {
+    stroke: none !important;
+    stroke-width: 0px !important;
+  }
+}
+
+.circle {
+  opacity: 0.3;
+}
+
+.progress {
+  transform: rotate(90deg);
+  transform-origin: center;
+}
