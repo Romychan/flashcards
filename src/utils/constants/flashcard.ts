@@ -4,8 +4,6 @@ export const MAX_LEARNING_STEP = 4;
 
 export const FLASHCARDS_STORAGE = 'flashcards';
 
-export const COMPLETED_STORAGE = 'flashcards-completed';
-
 export const SETTINGS_STORAGE = 'flashcards-setting';
 
 export const FLASHCARDS_COLUMN_SIZE = {

@@ -35,7 +35,7 @@ export const Settings = () => {
         <SegmentControl
           items={TRAINING_MODE}
           initialIndex={defaultSegmentValue}
-          onChange={(value) => setMaxCards(value)}
+          onChange={(value) => setMaxCards(Number(value))}
         />
       </SettingsItem>
     </div>

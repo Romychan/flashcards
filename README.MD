@@ -39,6 +39,7 @@ This is a web application that allows you to learn and repeat English words usin
 - [React](https://reactjs.org/)
 - [React Router](https://reactrouter.com/)
 - [Redux Toolkit](https://redux-toolkit.js.org/)
+- [Redux Persist](https://www.npmjs.com/package/redux-persist)
 - [React Hook Form](https://react-hook-form.com/)
 - [Framer Motion](https://www.framer.com/motion/)
 - [SpeechSynthesis](https://developer.mozilla.org/en-US/docs/Web/API/SpeechSynthesis)
@@ -64,9 +65,6 @@ This is a web application that allows you to learn and repeat English words usin
 2. Install client dependencies
 
    ```sh
-   # Go into client
-   cd client
-   # Install client dependencies
    npm install
    ```
 

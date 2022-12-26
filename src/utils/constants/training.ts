@@ -1,4 +1,9 @@
-export const DEFAULT_SETTINGS = {
+interface ITrainingSettings {
+  autoVoice: boolean;
+  maxCards: number;
+}
+
+export const DEFAULT_SETTINGS: ITrainingSettings = {
   autoVoice: true,
   maxCards: 5,
 };

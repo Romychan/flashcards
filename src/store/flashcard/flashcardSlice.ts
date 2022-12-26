@@ -1,8 +1,8 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+
 import { ICardText, IFlashcard } from '../../types/Flashcard';
+
 import {
-  FLASHCARDS_STORAGE,
-  COMPLETED_STORAGE,
   MIN_LEARNING_STEP,
   MAX_LEARNING_STEP,
 } from '../../utils/constants/flashcard';
@@ -10,12 +10,8 @@ import {
 import { MOCK_FLASHCARDS } from '../../__mock__/Flashcards';
 
 const initialState = {
-  cards: JSON.parse(
-    localStorage.getItem(FLASHCARDS_STORAGE) || JSON.stringify(MOCK_FLASHCARDS),
-  ) as IFlashcard[],
-  completed: JSON.parse(
-    localStorage.getItem(COMPLETED_STORAGE) || '[]',
-  ) as IFlashcard[],
+  cards: MOCK_FLASHCARDS as IFlashcard[],
+  completed: [] as IFlashcard[],
 };
 export const flashcardSlice = createSlice({
   name: 'flashcard',
@@ -30,23 +26,17 @@ export const flashcardSlice = createSlice({
         progress: MIN_LEARNING_STEP,
         id: Date.now(),
       });
-
-      localStorage.setItem(FLASHCARDS_STORAGE, JSON.stringify(state.cards));
     },
     updateCards: (state, action: PayloadAction<IFlashcard[]>) => {
       state.cards = action.payload;
     },
     deleteCard: (state, action: PayloadAction<number>) => {
       state.cards = state.cards.filter((card) => card.id !== action.payload);
-
-      localStorage.setItem(FLASHCARDS_STORAGE, JSON.stringify(state.cards));
     },
     deleteCompletedCard: (state, action: PayloadAction<number>) => {
       state.completed = state.completed.filter(
         (card) => card.id !== action.payload,
       );
-
-      localStorage.setItem(COMPLETED_STORAGE, JSON.stringify(state.completed));
     },
     updateProgressCard: (
       state,
@@ -70,9 +60,6 @@ export const flashcardSlice = createSlice({
         state.completed.push(card);
         state.cards = state.cards.filter((item) => item.id !== card.id);
       }
-
-      localStorage.setItem(FLASHCARDS_STORAGE, JSON.stringify(state.cards));
-      localStorage.setItem(COMPLETED_STORAGE, JSON.stringify(state.completed));
     },
   },
 });
